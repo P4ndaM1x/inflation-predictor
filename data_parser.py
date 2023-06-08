@@ -1,3 +1,4 @@
+#!/bin/python3
 __author__ = '@P4ndaM1x, Michał Rutkowski'
 
 import pandas as pd
