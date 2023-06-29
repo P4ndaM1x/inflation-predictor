@@ -12,7 +12,7 @@ indicators_labels = {
     5: 'Koniunktura konsumencka i gospodarcza',  # dane od 2000 roku
     6: 'Przemysł',  # dane od 2005 roku
     7: 'Rynek pracy',  # dane od 2000 roku
-    # 8: 'Transport',  # dane od 2011 roku
+    8: 'Transport',  # dane od 2011 roku
     9: 'Wynagrodzenia i świadczenia społeczne'  # dane od 2000 roku
 }
 
