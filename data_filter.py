@@ -1,5 +1,3 @@
-__author__ = '@P4ndaM1x, Michał Rutkowski'
-
 import numpy as np
 
 
@@ -29,11 +27,15 @@ def filter_dictionary_data(data: dict, keys_to_remove: set):
 
 if __name__ == "__main__":
     normalized_data = dict(np.load('./macroeconomic_data/normalized_data.npy', allow_pickle=True).item())
+    normalized_data_recent = dict(np.load('./macroeconomic_data/normalized_data_recent.npy', allow_pickle=True).item())
     indicators_labels = dict(np.load('./macroeconomic_data/indicators_labels.npy', allow_pickle=True).item())
     subindicators_labels = dict(np.load('./macroeconomic_data/subindicators_labels.npy', allow_pickle=True).item())
 
     keys_to_remove = get_incomplete_data_keys(normalized_data, indicators_labels, subindicators_labels)
     filtered_data = filter_dictionary_data(normalized_data, keys_to_remove)
-
+    
+    keys_to_remove_recent = get_incomplete_data_keys(normalized_data_recent, indicators_labels, subindicators_labels)
+    filtered_data_recent = filter_dictionary_data(normalized_data_recent, keys_to_remove_recent)
 
     np.save('./macroeconomic_data/filtered_data.npy', filtered_data)
+    np.save('./macroeconomic_data/filtered_data_recent.npy', filtered_data_recent)
