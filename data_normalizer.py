@@ -1,4 +1,3 @@
-#!/bin/python3
 __author__ = '@P4ndaM1x, Michał Rutkowski'
 
 from typing import Callable

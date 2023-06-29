@@ -1,4 +1,3 @@
-#!/bin/python3
 __author__ = '@P4ndaM1x, Michał Rutkowski'
 
 import pandas as pd
@@ -15,7 +14,7 @@ indicators_labels = {
     5: 'Koniunktura konsumencka i gospodarcza',  # dane od 2000 roku (podane od razu w procentach ?)
     6: 'Przemysł',  # dane od 2005 roku
     7: 'Rynek pracy',  # dane od 2000 roku
-    8: 'Transport',  # dane od 2011 roku
+    # 8: 'Transport',  # dane od 2011 roku
     9: 'Wynagrodzenia i świadczenia społeczne'  # dane od 2000 roku
 }
 years_range = (2000, 2022)
@@ -50,7 +49,7 @@ parsed_data = {date: {k: v for d in indicators_list if date in d for k, v in d[d
 
 # format: {int(indicator_id): str(label), ...}
 np.save(rawdata_path + 'indicators_labels.npy', indicators_labels)
-# format: {int(subindicator_id): str(label), ...}
+# format: {int(indicator_id): {int(subindicator_id): str(label), ...}, ...}
 np.save(rawdata_path + 'subindicators_labels.npy', subindicators_labels)
 # format: {(int(year), int(month)): {int(indicator_id): {int(subindicator_id): float(value), ...}, ...}, ...}
 # cells marked with a dot in `.csv` files are represented by None values
