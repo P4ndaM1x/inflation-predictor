@@ -57,7 +57,7 @@ np.save(rawdata_path + 'subindicators_labels.npy', subindicators_labels)
 # cells marked with a dot in `.csv` files are represented by None values
 np.save(rawdata_path + 'parsed_data.npy', parsed_data)
 
-parsed_data_recent, subindicators_labels_recent = parse_with_years_range((2023, 2023))
+parsed_data_recent, subindicators_labels_recent = parse_with_years_range((2022, 2024))
 assert subindicators_labels == subindicators_labels_recent, "Subindicators differ between years"
 
 # format same as parsed_data
